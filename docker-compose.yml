@@ -11,7 +11,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
     environment:
       - TZ=Asia/Bangkok
-      - TITLE="HTML5 loadtest 15MB"
+      - TITLE="HTML5 size 15MB 8Jul2022"
       - MODE=standalone
       - TELEMETRY=true
       - EMAIL=mc@ipv9.me
