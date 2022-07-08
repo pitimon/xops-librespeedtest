@@ -2,7 +2,8 @@ version: '3'
 
 services:
   app:
-    image: ipvsix/librespeedtest:latest
+#    image: ipvsix/librespeedtest:latest
+    image: ipvsix/dockerlibrespeed:latest
     shm_size: '128mb'
     ports: 
       - 50000:80
@@ -16,7 +17,6 @@ services:
       - TITLE="HTML5 size 5MB 8Jul2022"
       - MODE=standalone
       - TELEMETRY=true
-      - EMAIL=${MYEMAIL}
       - ENABLE_ID_OBFUSCATION=true
       - EDACT_IP_ADDRESSES=true
     deploy:
