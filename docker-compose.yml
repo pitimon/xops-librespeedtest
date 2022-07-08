@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  app:
+    image: ipvsix/librespeedtest:latest
+    shm_size: '128mb'
+    ports: 
+      - 50000:80
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - TZ=Asia/Bangkok
+      - TITLE="HTML5 loadtest 15MB"
+      - MODE=standalone
+      - TELEMETRY=true
+      - EMAIL=mc@ipv9.me
+      - ENABLE_ID_OBFUSCATION=true
+      - EDACT_IP_ADDRESSES=true
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: '4.0'
+          memory: 4G
