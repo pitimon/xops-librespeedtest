@@ -6,6 +6,8 @@ services:
     shm_size: '128mb'
     ports: 
       - 50000:80
+    networks:
+      - webproxy
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
@@ -14,7 +16,7 @@ services:
       - TITLE="HTML5 size 5MB 8Jul2022"
       - MODE=standalone
       - TELEMETRY=true
-      - EMAIL=mc@ipv9.me
+      - EMAIL=${MYEMAIL}
       - ENABLE_ID_OBFUSCATION=true
       - EDACT_IP_ADDRESSES=true
     deploy:
@@ -23,3 +25,13 @@ services:
         limits:
           cpus: '4.0'
           memory: 4G
+      labels:
+        - traefik.enable=true
+        - traefik.docker.network=webproxy
+        - traefik.http.routers.${APPNAME}-https.rule=Host(`${DOMAIN?Variable not set}`)
+        - traefik.http.routers.${APPNAME}-https.entrypoints=websecure
+        - traefik.http.routers.${APPNAME}-https.tls.certresolver=default
+        - traefik.http.services.${APPNAME}.loadbalancer.server.port=80
+networks:
+  webproxy:
+    external: true
