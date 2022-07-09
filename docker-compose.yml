@@ -15,7 +15,7 @@ services:
     environment:
       - TZ=Asia/Bangkok
       - TITLE="HTML5 size 5MB 9Jul2022"
-      - MODE=backend
+      - MODE=standalone
       - TELEMETRY=true
       - ENABLE_ID_OBFUSCATION=true
       - EDACT_IP_ADDRESSES=true
