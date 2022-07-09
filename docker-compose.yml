@@ -2,8 +2,8 @@ version: '3'
 
 services:
   app:
-#    image: linuxserver/librespeed:latest
-    image: ipvsix/dockerlibrespeed:latest
+    image: linuxserver/librespeed:latest
+#    image: ipvsix/dockerlibrespeed:latest
     shm_size: '128mb'
     ports: 
       - 50000:80
