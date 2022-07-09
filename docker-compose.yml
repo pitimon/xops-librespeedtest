@@ -15,10 +15,10 @@ services:
     environment:
       - TZ=Asia/Bangkok
       - TITLE="HTML5 size 5MB 9Jul2022"
-      - MODE=standalone
-      - TELEMETRY=true
-      - ENABLE_ID_OBFUSCATION=true
-      - EDACT_IP_ADDRESSES=true
+#      - MODE=standalone
+#      - TELEMETRY=true
+#      - ENABLE_ID_OBFUSCATION=true
+#      - EDACT_IP_ADDRESSES=true
     deploy:
       replicas: 1
       resources:
