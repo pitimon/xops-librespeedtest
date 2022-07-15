@@ -3,10 +3,11 @@ version: '3'
 services:
   app:
 #    image: linuxserver/librespeed:latest
-    image: ipvsix/librespeedtest:latest
+    image: ipvsix/librespeedtest:0715
     shm_size: '128mb'
     ports: 
       - 50000:80
+      - 50001:443
     networks:
       - webproxy
     volumes:
