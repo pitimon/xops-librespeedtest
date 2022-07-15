@@ -7,7 +7,7 @@ services:
     shm_size: '128mb'
     ports: 
       - 50000:80
-      - 50001:443
+      - 443
     networks:
       - webproxy
     volumes:
